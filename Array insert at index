@@ -1,0 +1,48 @@
+Problem Statement
+Insertion is a basic but frequently used operation. Arrays in most languages cannot be dynamically shrinked or expanded. Here, we will work with such arrays and try to insert an element at some index.
+
+You are given an array arr. The size of the array is given by sizeOfArray. You need to insert an element at given index and print the modified array.
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        
+        int tc=0;
+        int n=0;
+        int ele=0;
+        int ind=0;
+      
+        tc=sc.nextInt();
+        for(int i=1;i<=tc;i++)
+        {
+            n=sc.nextInt();
+            int a[] = new int[10000];
+           
+            ele=sc.nextInt();
+            
+            ind=sc.nextInt();
+
+            for (int j=0;j<n-1;j++)
+            {
+                a[j]=sc.nextInt();
+
+            }
+            for(int k=n;k>=ind;k--)
+            {
+                a[k+1]=a[k];
+            }
+            a[ind]=ele;
+            for(int l=0;l<n;l++)
+            {
+                System.out.print(a[l]+" ");
+            }
+            System.out.println();
+        }
+
+    }
